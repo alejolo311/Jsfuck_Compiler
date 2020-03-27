@@ -1,3 +1,18 @@
+const fs = require("fs");  
+const process = require('process'); 
+
+fs.readFile(process.argv[2], "utf-8", (err, data) => {
+    if (err){
+        console.log(err)
+    }else{
+        let result = compile(data);
+        fs.writeFile(process.argv[3], result, (err) => {
+            if (err){
+                console.log("error")
+            }
+        })
+    }
+});
 const zero = '+[]';
 const one = '+!![]';
 
