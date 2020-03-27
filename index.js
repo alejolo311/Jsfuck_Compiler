@@ -36,3 +36,5 @@ principalLetters.d = `(${number(13)})[${fromString('toString')}](${number(14)})`
 principalLetters.h = `(${number(17)})[${fromString('toString')}](${number(18)})`;
 principalLetters.m = `(${number(22)})[${fromString('toString')}](${number(23)})`;
 principalLetters.C = `((()=>{})[${fromString('constructor')}](${fromString('return escape')})()(${principalLetters['\\']}))[${number(2)}]`;
+
+const compile = code => `(()=>{})[${fromString('constructor')}](${fromString(code)})()`;
