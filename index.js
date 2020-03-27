@@ -1,5 +1,9 @@
 const fs = require("fs");  
-const process = require('process'); 
+const process = require('process');
+
+if (process.argv[2] === undefined || process.argv[3] === undefined){
+  throw("USAGE: node index.js [ Input file ] [ Output file ]");
+}
 
 fs.readFile(process.argv[2], "utf-8", (err, data) => {
     if (err){
